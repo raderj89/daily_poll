@@ -1,0 +1,144 @@
+@import variables
+.pages-question-container
+// latest question
+.latest-question
+  position: relative
+  min-height: 660px
+  margin: 0 auto
+  width: 95%
+  h2
+    font-family: $main-sans-serif-font
+    font-weight: 600
+    font-size: 1.5em
+    color: $gray
+    margin-bottom: 0
+    padding-top: 2em
+  .question-header
+    width: 60%
+    margin-top: 10px
+    @media screen and (max-width: 775px)
+      width: 100%
+    h1
+      font-family: $main-serif-font
+      font-size: 2.5em
+      font-weight: 800
+      color: $black
+      @media screen and (max-width: 775px)
+        font-size: 28px
+
+  .results
+    width: 250px
+    position: absolute
+    bottom: 0
+    .vote-count
+      font-family: $main-serif-font
+      font-weight: 800
+      font-size: 48px
+    .total
+      color: $dark-gray
+    .yes
+      color: $blue
+    .no
+      color: $red
+    p
+      display: inline-block
+      font-family: $main-sans-serif-font
+      font-weight: 700
+      font-size: 28px
+    @media screen and (max-width: 775px)
+      position: relative
+
+  .chart
+    position: absolute
+    bottom: 0
+    right: 50px
+    width: 435px
+    height: 615px
+    @media screen and (max-width: 775px)
+      position: relative
+      width: 310px
+      right: 26px
+      margin: 0 auto 1em
+    .yes-section-container
+      display: inline-block
+      position: absolute
+      bottom: 0
+      left: 0
+      @media screen and (max-width: 775px)
+        width: 50%
+      .yes-people
+        width: 191px
+        display: inline-block
+        text-align: center
+        h2
+          text-align: center
+          color: $blue
+          padding: 1em
+          @media screen and (max-width: 775px)
+            padding: 0
+        img
+          width: 100px
+      @media screen and (max-width: 775px)
+        .yes-people
+          width: 160px
+      .yes-graph
+        display: inline-block
+        .yes-box
+          background: $blue
+          width: 100px
+          text-align: center
+          font-family: $main-serif-font
+          font-size: 48px
+          font-weight: 800
+          padding: 50px
+          color: #fff
+          span
+            position: relative
+            top: 38%
+        @media screen and (max-width: 775px)
+          .yes-box
+            padding: 25px
+            span
+              margin-left: -10px
+
+    .no-section-container
+      display: inline-block
+      position: absolute
+      bottom: 0
+      right: 0
+      @media screen and (max-width: 775px)
+        width: 50%
+      .no-people
+        display: inline-block
+        margin: 0
+        width: 190px
+        text-align: center
+        h2
+          text-align: center
+          color: $red
+          padding: 1em
+        @media screen and (max-width: 775px)
+          padding: 0
+        img
+          width: 100px
+      @media screen and (max-width: 775px)
+        .no-people
+          width: 160px
+      .no-graph
+
+        .no-box
+          width: 100px
+          height: 300px
+          background: $red
+          text-align: center
+          font-family: $main-serif-font
+          font-size: 48px
+          font-weight: 800
+          padding: 50px
+          color: #fff
+          span
+            position: relative
+            top: 38%
+        @media screen and (max-width: 775px)
+          .no-box
+            padding: 25px

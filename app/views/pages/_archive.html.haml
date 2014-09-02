@@ -1,0 +1,20 @@
+- unless polls.empty?
+  .archive-container
+    .archive-content
+      %h1 the archive
+      .archive-index
+        %ul
+          - polls.each do |poll|
+            %li.clearfix
+              %span.date= poll.release_date.strftime('%_m.%d')
+              %span.question{ data: { question_text: "#{poll.question}" } }
+                = truncate(poll.question, length: 48, separator: ' ')
+      - if @latest_poll
+        .archive-poll-container
+          .archive-poll
+            .poll-scroll
+              .previous-poll{data: {previous_poll: previous_poll(@latest_poll)}}
+                %span prev
+              .next-poll{data: {next_poll: next_poll(@latest_poll)}}
+                %span next
+            = render partial: 'poll', locals: { poll: @latest_poll }

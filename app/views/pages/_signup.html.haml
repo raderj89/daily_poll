@@ -1,0 +1,14 @@
+.content
+  .header
+    %h1.logo Daily Poll
+  .signup-content-wrapper.clearfix
+    .sub-header-wrapper
+      .sub-header
+        %h2 Are you part of the majority or the minority? Answer a daily question via SMS and find out!
+      .speech-bubble-bottom
+    .cheering-main-and-form-wrapper
+      .cheering-main
+        = image_tag("cheering_main.png")
+      .new-user-form-wrapper
+        .new-user-form.clearfix
+          = render partial: '/users/form', locals: {resource: @user}

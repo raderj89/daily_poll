@@ -1,0 +1,91 @@
+$main-serif-font: 'Arvo', serif
+$main-sans-serif-font: 'Open Sans', sans-serif
+
+// Colors
+$blue: #008297
+$red: #E20021
+$dark-gray: #4B5256
+$gray: #757472
+$tan: #FAF4E7
+$gold: #FCE774
+$dark-gold: #B28000
+$black: #333333
+
+@mixin new-user-form
+  width: 100%
+  form
+    input
+      background: $tan
+      float: right
+      width: 18em
+      margin-bottom: 1em
+      padding: 1em
+      border: none
+      font-size: .8em
+    label
+      display: none
+    input[type="submit"]
+      cursor: pointer
+      min-width: 180px
+      text-transform: uppercase
+      width: 8em
+      float: right
+      background: $gold
+      color: $dark-gold
+      border-radius: 8px
+      border-bottom: 3px solid $dark-gold
+      min-height: 40px
+      &:hover
+        border-bottom: 3px solid $gold
+  @media (max-width: 480px)
+    margin: 0 auto
+    float: right
+@mixin new-user-form-subscribed
+  form
+    display: none
+  #subscribed
+    background: #fff
+    padding: 1em
+    border-radius: 4px
+    margin: 0 0 4em 0
+    display: inline-block
+    span
+      font-family: $main-serif-font
+      font-weight: bold
+      color: $blue
+      form
+        display: none
+      line-height: normal
+    .arrow-left
+      width: 0
+      height: 0
+      border-top: .5em solid transparent
+      border-bottom: .5em solid transparent
+      border-right: .5em solid #fff
+      float: left
+      display: inline-block
+      margin: 0 0 0 -1.5em
+
+@mixin archive-index
+  span.date
+    color: $dark-gold
+    background: $gold
+    padding: 0.9em 1em 1em
+    border-radius: 8px
+    border-bottom: 2px solid $dark-gold
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+    font-family: $main-sans-serif-font
+  span.question
+    display: inline-block
+    padding: 1.09em 0 1.18em 1em
+    background: #fff
+    width: 80%
+    border-radius: 8px
+    font-size: 1em
+    font-family: $main-sans-serif-font
+    margin-left: -0.2em
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+    border-bottom: 2px solid #ccc
+

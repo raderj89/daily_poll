@@ -1,0 +1,6 @@
+.footer
+  .new-user-form
+    %h1
+      = "Join #{User.all.count} others on Daily Poll"
+    = render partial: '/users/form', locals: {resource: @user}
+  .clear

@@ -1,0 +1,101 @@
+@import variables
+body
+  h1, h2, span, p
+    cursor: default
+
+.clearfix:after
+  content: ''
+  display: block
+  height: 0
+  clear: both
+
+.container
+  width: 1000px
+  margin: 0 auto
+
+.logo
+  text-transform: uppercase
+  font-size: .8em
+
+// new user form
+
+.content
+  width: 100%
+  top: 0
+  right: 0
+  left: 0
+
+  background: image-url("cheering_blue_tile.png")
+  background-size: 80px
+  .header
+    font-family: $main-serif-font
+    padding: 1em 1em .5em
+    font-size: 2em
+    color: $gold
+    font-weight: bold
+  .signup-content-wrapper
+    width: 75%
+    max-width: 750px
+    margin: 0 auto
+    .sub-header-wrapper
+      width: 100%
+      margin: 0 auto
+      .sub-header
+        font-family: $main-serif-font
+        background: #f6f1e3
+        font-size: 2.5em
+        border: 2px solid transparent
+        border-radius: 8px
+
+        h2
+          padding: .5em 1em
+          line-height: 1.5
+          font-size: 2.5rem
+          color: $blue
+          font-weight: bold
+          @media (max-width: 800px)
+            font-size: 18px
+            padding-bottom: 0
+          @media (max-width: 320px)
+            font-size: 18px
+      .speech-bubble-bottom
+        width: 0
+        height: 0
+        margin-top: -2px
+        display: inline-block
+        margin-left: 17%
+        border-left: 40px solid transparent
+        border-right: 40px solid transparent
+        border-top: 40px solid #f6f1e3
+    .cheering-main-and-form-wrapper
+      width: 100%
+      margin: 0 auto
+
+      @media (max-width: 480px)
+        width: 100%
+      .cheering-main
+        display: inline-block
+        width: 45%
+        margin: 1em 0
+        img
+          width: 100%
+          display: inline-block
+        @media (max-width: 480px)
+          width: 75%
+      .new-user-form-wrapper
+        display: inline-block
+        margin: 0 0 6em 1em
+        float: right
+        @media (max-width: 480px)
+          margin-left: 10%
+          margin-right: 0
+
+        .new-user-form
+          @include new-user-form
+        .new-user-form.subscribed
+          @include new-user-form-subscribed
+
+
+
+
+

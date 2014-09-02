@@ -1,0 +1,6 @@
+%h1 Create Poll
+.question-form
+  = simple_form_for [:admin, @poll] do |f|
+    = f.input :question, input_html: { placeholder: "Question" }
+    = f.input :release_date
+    = f.submit

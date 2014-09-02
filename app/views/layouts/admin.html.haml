@@ -1,0 +1,28 @@
+!!! 5
+%html
+  %head
+    %title
+      Daily Poll - Admin
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %link{ href: 'http://fonts.googleapis.com/css?family=Arvo:400,700', rel: 'stylesheet', type: 'text/css' }
+    %link{ href: 'http://fonts.googleapis.com/css?family=Open+Sans:400,700,600', rel: 'stylesheet', type: 'text/css' }
+    = csrf_meta_tags
+
+%body.admin-body
+  %nav
+    .container.clearfix
+      .navbar-header
+        = link_to "Admin Dashboard", admin_root_path, class: 'admin-logo'
+      - if admin_signed_in?
+        %ul.navlinks.clearfix
+          %li
+            = link_to "Create Poll", new_admin_poll_path
+
+    - flash.each do |type, msg|
+      %p
+        = msg
+
+  .container
+    = yield

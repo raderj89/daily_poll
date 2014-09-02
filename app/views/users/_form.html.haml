@@ -1,0 +1,4 @@
+= simple_form_for @user do |f|
+  = f.input :name, required: false, input_html: { placeholder: "Name" }
+  = f.input :phone, required: false, input_html: { placeholder: "Phone Number" }
+  = f.submit "Subscribe"

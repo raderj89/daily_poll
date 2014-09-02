@@ -1,0 +1,40 @@
+.latest-question
+  %h2 the latest question
+  - if poll.nil?
+    No polls yet!
+  - else
+    .question-header
+      %h1= poll.question
+
+    .results
+      .result-set
+        %span.vote-count.total
+          = poll.votes.count
+        %p total votes
+      .result-set
+        %span.vote-count.yes
+          = poll.yes_count
+        %p voted YES
+      .result-set
+        %span.vote-count.no
+          = poll.no_count
+        %p voted NO
+
+    .chart
+
+      .yes-section-container
+        .yes-people-box
+          .yes-people{ :style => "height: #{100 - poll.yes_percent }%;"}
+            %h2 YES!
+            = image_tag("cheering_blue.png")
+        .yes-graph
+          .yes-box{:style => "height: #{box_height(poll.yes_count, poll.votes.count)}px;"}
+            %span= number_to_percentage(poll.yes_percent, precision: 0)
+      .no-section-container
+        .no-people-box
+          .no-people{ :style => "height: #{100 - poll.no_percent }%;"}
+            %h2 NO!
+            = image_tag("cheering_red.png")
+        .no-graph
+          .no-box{:style => "height: #{box_height(poll.no_count, poll.votes.count)}px;"}
+            %span= number_to_percentage(poll.no_percent, precision: 0)

@@ -1,0 +1,13 @@
+.current-poll
+  %h2 Today's Poll
+  - unless @today_poll.nil?
+    %span.date= @today_poll.release_date.strftime('%_m.%d')
+    %span.question{ data: { question_text: "#{@today_poll.question}" } }
+      = truncate(@today_poll.question, length: 45, separator: ' ')
+
+.poll-section
+  %h2 Manage Polls
+  - unless @later_polls.empty?
+    .future-polls
+      %ul.poll-list{ data: { update_url: "#{ sort_admin_polls_url }"} }
+        = render partial: "admin/polls/poll", collection: @later_polls

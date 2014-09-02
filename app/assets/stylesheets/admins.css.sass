@@ -1,0 +1,120 @@
+@import variables
+
+.admin-body
+  background: $tan
+  font-family: $main-sans-serif-font
+
+h1, h2, h3, h4
+  font-family: $main-serif-font
+  font-weight: 600
+
+h1
+  font-size: 36px
+  margin-bottom: 20px
+
+h2
+  font-size: 30px
+  margin-bottom: 20px
+
+h3
+  font-size: 24px
+
+p
+  font-family: $main-sans-serif-font
+  font-size: 14px
+  line-height: 20px
+  color: $black
+
+a
+  text-decoration: none
+
+.clearfix
+  &:before
+    content: ""
+    display: table
+  &:after
+    content: ""
+    display: table
+    clear: both
+  zoom: 1
+
+.container
+  width: 960px
+  margin: 0 auto
+
+// LAYOUT
+
+nav
+  position: relative
+  background: $blue
+  min-height: 50px
+  margin-bottom: 20px
+  .navbar-header
+    float: left
+    margin-right: 0
+    margin-left: 0
+    margin-left: -15px
+    .admin-logo
+      float: left
+      padding: 15px
+      font-size: 18px
+      line-height: 20px
+      font-family: $main-serif-font
+      font-weight: 600
+      color: $gold
+  ul.navlinks
+    float: right
+    li
+      float: left
+      a
+        padding: 10px
+        border-radius: 5px
+        background: $gold
+        display: block
+        margin: 5px 0
+        border-radius: 8px
+        border-bottom: 2px solid $dark-gold
+
+// INDEX
+.current-poll
+  padding: 25px 0
+  border-bottom: 1px solid #eee
+  margin-left: -0.3em
+  @include archive-index
+
+.poll-section
+  padding-top: 25px
+  width: 50%
+  .future-polls
+    margin-left: -0.3em
+    .poll-list
+      .poll
+        margin-bottom: 20px
+        .date:hover
+          cursor: move
+        .question:hover
+          cursor: move
+      @include archive-index
+
+// NEW QUESTION
+.question-form
+  form
+    input
+      width: 100%
+      margin: .8em
+      padding: 1em
+      border: 2px solid $blue
+    label
+      display: none
+    input[type="submit"]
+      min-width: 180px
+      text-transform: uppercase
+      width: 8em
+      background: $gold
+      color: $dark-gold
+      border-radius: 8px
+      border: 2px solid $dark-gold
+      border-bottom: 3px solid
+  @media (max-width: 480px)
+    margin: 0 auto
+    float: right

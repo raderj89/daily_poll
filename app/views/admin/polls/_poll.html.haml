@@ -1,0 +1,4 @@
+= content_tag_for :li, poll do
+  %span.date= poll.release_date.strftime('%_m.%d')
+  %span.question{ data: { question_text: "#{poll.question}" } }
+    = truncate(poll.question, length: 45, separator: ' ')

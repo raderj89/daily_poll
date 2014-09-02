@@ -1,0 +1,8 @@
+.pages-signup-container
+  = render partial: 'signup'
+.pages-question-container
+  = render partial: 'question', locals: { poll: @latest_poll }
+.pages-archive-container
+  = render partial: 'archive', locals: { polls: @polls }
+.pages-footer-container
+  = render partial: 'footer'

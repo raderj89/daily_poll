@@ -1,0 +1,31 @@
+.poll
+  .previous-poll-data{data: {previous_poll: previous_poll(poll)}}
+  .next-poll-data{data: {next_poll: next_poll(poll)}}
+  .question
+    %span
+      =poll.question
+  .people
+    - poll.yes_percent.to_i.times do
+      = image_tag("single_cheering_blue.png")
+    - (100 - poll.yes_percent.to_i).times do
+      = image_tag("single_cheering_red.png")
+  .poll-stats-container
+    .yes-percent
+      = number_to_percentage(poll.yes_percent, precision: 0)
+      %br/
+      YES
+    .no-percent
+      = number_to_percentage(poll.no_percent, precision: 0)
+      %br/
+      NO
+    .count-container
+      .yes-count
+        %span.yes YES:
+        %span.count= "#{poll.yes_count}"
+      .no-count
+        %span.no NO:
+        %span.count= "#{poll.no_count}"
+      .total-votes
+        %span.total TOTAL VOTES:
+        %span.total-count= "#{poll.total_votes}"
+

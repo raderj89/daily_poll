@@ -1,0 +1,31 @@
+@import variables
+.pages-footer-container
+  width: 100%
+  background: $blue
+  .footer
+    margin: 0 auto
+    .new-user-form
+      -moz-box-sizing: border-box
+      -webkit-box-sizing: border-box
+      box-sizing: border-box
+      padding: 2em
+      @include new-user-form
+      h1
+        font-family: $main-serif-font
+        font-weight: 800
+        color: #fff
+        margin-bottom: 16px
+        font-size: 24px
+        @media (max-width: 480px)
+          margin-left: 2em
+      form
+        input
+          display: inline-block
+          float: left
+          margin-right: 1em
+        input[type=submit]
+          float: none
+      @media (max-width: 480px)
+        width: 75%
+  .clear
+    clear: both
