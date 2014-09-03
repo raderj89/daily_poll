@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.1'
-
-gem 'mysql2'
 
 gem 'sass-rails', '~> 4.0.3'
 
@@ -23,12 +20,17 @@ gem 'capistrano'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 
-gem 'spring',        group: :development
-
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'ffaker'
 
 group :development do
   gem 'pry-rails'
+  gem 'mysql2'
+  gem 'spring'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
 end
