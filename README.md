@@ -2,6 +2,8 @@
 
 Daily Poll is a fun polling app built in one week (June 16 - June 23, 2014) during my apprenticeship at [DevShop](www.nycdevshop.com).
 
+The app is no longer being maintained, but a demo can be viewed [here](dailypoll.herokuapp.com). All votes and text on the site are filler.
+
 ## Install
 
 1. Clone the repository.

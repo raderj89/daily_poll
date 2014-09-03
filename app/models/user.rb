@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :phone, presence: true, uniqueness: true
 
-  # after_save :subscribe_message
+  after_save :subscribe_message
 
   private
 
@@ -15,19 +15,19 @@ class User < ActiveRecord::Base
       self.phone = '+1' + self.phone
     end
 
-    # def subscribe_message
-    #   client = setup_client
+    def subscribe_message
+      client = setup_client
 
-    #   from = Rails.application.secrets.twilio_phone_number
+      from = Rails.application.secrets.twilio_phone_number
 
-    #   client.account.messages.create(
-    #     from: from,
-    #     to: self.phone,
-    #     body: "You've been subscribed to Daily Poll! " +
-    #           "#{Poll.today_poll unless Poll.today_poll.nil?} " +
-    #           "If you wish to unsubscribe at any time, just text back 'unsubscribe'."
-    #   )
-    # end
+      client.account.messages.create(
+        from: from,
+        to: self.phone,
+        body: "You've been subscribed to Daily Poll! " +
+              "#{Poll.today_poll unless Poll.today_poll.nil?} " +
+              "If you wish to unsubscribe at any time, just text back 'unsubscribe'."
+      )
+    end
     
     def setup_client
       Twilio::REST::Client.new(Rails.application.secrets.twilio_sid,
